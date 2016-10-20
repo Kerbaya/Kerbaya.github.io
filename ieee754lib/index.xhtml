@@ -135,11 +135,13 @@
 	</h4>
 
 	<pre>
-		<code>byte[] quadBytes; // Input (16 bytes)
+		<code>
+<![CDATA[byte[] quadBytes; // Input (16 bytes)
 IEEE754 number = IEEE754.decode(IEEE754Format.QUADRUPLE, 
-    BitUtils.wrapSource(quadBytes));
+    	BitUtils.wrapSource(quadBytes));
 double converted = number.doubleValue();
-</code>
+]]>
+		</code>
 	</pre>
 
 	<h4>
@@ -150,10 +152,12 @@ double converted = number.doubleValue();
 	</h4>
 
 	<pre>
-		<code>IEEE754 number; // Input
+		<code>
+<![CDATA[IEEE754 number; // Input
 OutputStream os; // Output
 number.toBits(IEEE754Format.DOUBLE, BitUtils.wrapSink(os));
-</code>
+]]>
+		</code>
 	</pre>
 
 	<h4>
@@ -164,14 +168,16 @@ number.toBits(IEEE754Format.DOUBLE, BitUtils.wrapSink(os));
 	</h4>
 
 	<pre>
-		<code>byte[] quadBytes; // Input (16 bytes)
+		<code>
+<![CDATA[byte[] quadBytes; // Input (16 bytes)
 IEEE754Format format = new IEEE754Format(
-        11,                      // Exponent bit-count
-        52,                      // Significand bit-count
-        BigInteger.valueOf(1023) // Exponent bias
+		11,                      // Exponent bit-count
+		52,                      // Significand bit-count
+		BigInteger.valueOf(1023) // Exponent bias
 );
 IEEE754 number = IEEE754.decode(format, BitUtils.wrapSource(quadBytes));
-</code>
+]]>
+		</code>
 	</pre>
 
 	<footer class="site-footer">
