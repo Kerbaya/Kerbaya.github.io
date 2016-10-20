@@ -1,138 +1,193 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>IEEE754Lib</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="author" content="Kerbaya Foundation - kerbaya.org"/>
-    <meta name="description" content="Java library for encoding/decoding floating point numbers to/from IEEE 754 bit strings"/>
-    <link rel="stylesheet" type="text/css" href="../static/css/normalize.css" media="screen"/>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'/>
-    <link rel="stylesheet" type="text/css" href="../static/css/stylesheet.css" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="../static/css/github-light.css" media="screen"/>
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">IEEE754Lib</h1>
-      <h2 class="project-tagline">Java library for encoding/decoding floating point numbers to/from IEEE 754 bit strings</h2>
-      <a href="https://github.com/Kerbaya/ieee754lib" class="btn">View on GitHub</a>
-      <a href="https://github.com/Kerbaya/ieee754lib/releases/download/v1.0.1/ieee754lib-1.0.1.jar" class="btn">Download Latest Version (1.0.1)</a>
-      <a href="https://github.com/Kerbaya/ieee754lib/archive/v1.0.1.zip" class="btn">Download Source</a>
-    </section>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title>IEEE754Lib</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="author" content="Kerbaya Software - kerbaya.com" />
+<meta name="description"
+		content="Java library for encoding/decoding floating point numbers to/from IEEE 754 bit strings" />
+<link rel="stylesheet" type="text/css"
+		href="../static/css/normalize.css" media="screen" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700'
+		rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css"
+		href="../static/css/stylesheet.css" media="screen" />
+<link rel="stylesheet" type="text/css"
+		href="../static/css/github-light.css" media="screen" />
+</head>
+<body>
+	<section class="page-header">
+		<h1 class="project-name">IEEE754Lib</h1>
+		<h2 class="project-tagline">Java library for encoding/decoding floating point numbers to/from IEEE 754 bit strings</h2>
+		<a href="https://github.com/Kerbaya/ieee754lib" class="btn">View on GitHub</a>
+		<a href="https://github.com/Kerbaya/ieee754lib/releases/download/v1.0.1/ieee754lib-1.0.1.jar" class="btn">Download Latest Version (1.0.1)</a>
+		<a href="https://github.com/Kerbaya/ieee754lib/archive/v1.0.1.zip" class="btn">Download Source</a>
+	</section>
 
-    <section class="main-content">
-      <h3>
-<a id="what-is-ieee754lib" class="anchor" href="#what-is-ieee754lib" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What is IEEE754Lib?</h3>
+	<section class="main-content">
+		<h3>
+			<a id="what-is-ieee754lib" class="anchor" href="#what-is-ieee754lib" aria-hidden="true">
+				<span aria-hidden="true" class="octicon octicon-link"></span>
+			</a>
+			What is IEEE754Lib?
+		</h3>
 
-<p>IEEE754Lib is a small Java library that supports encoding and decoding floating point numbers using IEEE-754 bit streams.  Numbers are represented as Java objects that are independent of encoding formats.</p>
+		<p>IEEE754Lib is a small Java library that supports encoding and decoding floating point numbers using IEEE-754 bit streams. Numbers are represented as Java objects that are independent of encoding formats.</p>
 
-<h3>
-<a id="supported-formats" class="anchor" href="#supported-formats" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Supported Formats</h3>
+		<h3>
+			<a id="supported-formats" class="anchor" href="#supported-formats" aria-hidden="true">
+				<span aria-hidden="true" class="octicon octicon-link"></span>
+			</a>
+			Supported Formats
+		</h3>
 
-<h4>
-<a id="basic-formats" class="anchor" href="#basic-formats" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Basic Formats</h4>
+		<h4>
+			<a id="basic-formats" class="anchor" href="#basic-formats" aria-hidden="true">
+				<span aria-hidden="true" class="octicon octicon-link"></span>
+			</a>
+			Basic Formats
+		</h4>
 
-<p>Encoding, decoding, and conversion of all basic interchange formats is supported:</p>
+		<p>Encoding, decoding, and conversion of all basic interchange formats is supported:</p>
 
-<table>
-<thead>
-<tr>
-<th align="left">Name</th>
-<th align="left">Common name</th>
-<th align="right">Exponent bits</th>
-<th align="right">Significand bits</th>
-<th align="right">Exponent bias</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><a href="https://en.wikipedia.org/wiki/Half-precision_floating-point_format">binary16</a></td>
-<td align="left">Half</td>
-<td align="right">5</td>
-<td align="right">10</td>
-<td align="right">15</td>
-</tr>
-<tr>
-<td align="left"><a href="https://en.wikipedia.org/wiki/Single-precision_floating-point_format">binary32</a></td>
-<td align="left">Single</td>
-<td align="right">8</td>
-<td align="right">23</td>
-<td align="right">127</td>
-</tr>
-<tr>
-<td align="left"><a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">binary64</a></td>
-<td align="left">Double</td>
-<td align="right">11</td>
-<td align="right">52</td>
-<td align="right">1023</td>
-</tr>
-<tr>
-<td align="left"><a href="https://en.wikipedia.org/wiki/Quadruple-precision_floating-point_format">binary128</a></td>
-<td align="left">Quadruple</td>
-<td align="right">15</td>
-<td align="right">112</td>
-<td align="right">16383</td>
-</tr>
-<tr>
-<td align="left"><a href="https://en.wikipedia.org/wiki/Octuple-precision_floating-point_format">binary256</a></td>
-<td align="left">Octuple</td>
-<td align="right">19</td>
-<td align="right">236</td>
-<td align="right">262143</td>
-</tr>
-</tbody>
-</table>
+		<table>
+			<thead>
+				<tr>
+					<th align="left">Name</th>
+					<th align="left">Common name</th>
+					<th align="right">Exponent bits</th>
+					<th align="right">Significand bits</th>
+					<th align="right">Exponent bias</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td align="left">
+						<a href="https://en.wikipedia.org/wiki/Half-precision_floating-point_format">binary16</a>
+					</td>
+					<td align="left">Half</td>
+					<td align="right">5</td>
+					<td align="right">10</td>
+					<td align="right">15</td>
+				</tr>
+				<tr>
+					<td align="left">
+						<a href="https://en.wikipedia.org/wiki/Single-precision_floating-point_format">binary32</a>
+					</td>
+					<td align="left">Single</td>
+					<td align="right">8</td>
+					<td align="right">23</td>
+					<td align="right">127</td>
+				</tr>
+				<tr>
+					<td align="left">
+						<a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">binary64</a>
+					</td>
+					<td align="left">Double</td>
+					<td align="right">11</td>
+					<td align="right">52</td>
+					<td align="right">1023</td>
+				</tr>
+				<tr>
+					<td align="left">
+						<a href="https://en.wikipedia.org/wiki/Quadruple-precision_floating-point_format">binary128</a>
+					</td>
+					<td align="left">Quadruple</td>
+					<td align="right">15</td>
+					<td align="right">112</td>
+					<td align="right">16383</td>
+				</tr>
+				<tr>
+					<td align="left">
+						<a href="https://en.wikipedia.org/wiki/Octuple-precision_floating-point_format">binary256</a>
+					</td>
+					<td align="left">Octuple</td>
+					<td align="right">19</td>
+					<td align="right">236</td>
+					<td align="right">262143</td>
+				</tr>
+			</tbody>
+		</table>
 
-<h4>
-<a id="arbitrary-formats" class="anchor" href="#arbitrary-formats" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Arbitrary Formats</h4>
+		<h4>
+			<a id="arbitrary-formats" class="anchor" href="#arbitrary-formats" aria-hidden="true">
+				<span aria-hidden="true" class="octicon octicon-link"></span>
+			</a>
+			Arbitrary Formats
+		</h4>
 
-<p>Arbitrary formats are supported by providing custom values for:</p>
+		<p>Arbitrary formats are supported by providing custom values for:</p>
 
-<ul>
-<li>Exponent bit-count</li>
-<li>Significand bit-count</li>
-<li>Exponent bias</li>
-</ul>
+		<ul>
+			<li>Exponent bit-count</li>
+			<li>Significand bit-count</li>
+			<li>Exponent bias</li>
+		</ul>
 
-<h3>
-<a id="usage-examples" class="anchor" href="#usage-examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage Examples</h3>
+		<h3>
+			<a id="usage-examples" class="anchor" href="#usage-examples" aria-hidden="true">
+				<span aria-hidden="true" class="octicon octicon-link"></span>
+			</a>
+			Usage Examples
+		</h3>
 
-<h4>
-<a id="reading-quadruple-precision-binary128-from-a-byte-array" class="anchor" href="#reading-quadruple-precision-binary128-from-a-byte-array" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Reading Quadruple-Precision (<a href="https://en.wikipedia.org/wiki/Quadruple-precision_floating-point_format">binary128</a>) from a Byte Array</h4>
+		<h4>
+			<a id="reading-quadruple-precision-binary128-from-a-byte-array" class="anchor" href="#reading-quadruple-precision-binary128-from-a-byte-array" aria-hidden="true">
+				<span aria-hidden="true" class="octicon octicon-link"></span>
+			</a>
+			Reading Quadruple-Precision (<a href="https://en.wikipedia.org/wiki/Quadruple-precision_floating-point_format">binary128</a>) from a Byte Array
+		</h4>
 
-<pre><code>byte[] quadBytes; // Input (16 bytes)
+		<pre>
+			<code>byte[] quadBytes; // Input (16 bytes)
 IEEE754 number = IEEE754.decode(IEEE754Format.QUADRUPLE, 
     BitUtils.wrapSource(quadBytes));
 double converted = number.doubleValue();
-</code></pre>
+</code>
+		</pre>
 
-<h4>
-<a id="writing-double-precision-binary64-to-an-outputstream" class="anchor" href="#writing-double-precision-binary64-to-an-outputstream" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Writing Double-Precision (<a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">binary64</a>) to an OutputStream</h4>
+		<h4>
+			<a id="writing-double-precision-binary64-to-an-outputstream" class="anchor" href="#writing-double-precision-binary64-to-an-outputstream" aria-hidden="true">
+				<span aria-hidden="true" class="octicon octicon-link"></span>
+			</a>
+			Writing Double-Precision (<a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">binary64</a>) to an OutputStream
+		</h4>
 
-<pre><code>IEEE754 number; // Input
+		<pre>
+			<code>IEEE754 number; // Input
 OutputStream os; // Output
 number.toBits(IEEE754Format.DOUBLE, BitUtils.wrapSink(os));
-</code></pre>
+</code>
+		</pre>
 
-<h4>
-<a id="reading-arbitrary-precision-from-a-byte-array" class="anchor" href="#reading-arbitrary-precision-from-a-byte-array" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Reading Arbitrary-Precision from a Byte Array</h4>
+		<h4>
+			<a id="reading-arbitrary-precision-from-a-byte-array" class="anchor" href="#reading-arbitrary-precision-from-a-byte-array" aria-hidden="true">
+				<span aria-hidden="true" class="octicon octicon-link"></span>
+			</a>
+			Reading Arbitrary-Precision from a Byte Array
+		</h4>
 
-<pre><code>byte[] quadBytes; // Input (16 bytes)
+		<pre>
+			<code>byte[] quadBytes; // Input (16 bytes)
 IEEE754Format format = new IEEE754Format(
         11,                      // Exponent bit-count
         52,                      // Significand bit-count
         BigInteger.valueOf(1023) // Exponent bias
 );
 IEEE754 number = IEEE754.decode(format, BitUtils.wrapSource(quadBytes));
-</code></pre>
+</code>
+		</pre>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/Kerbaya/ieee754lib">IEEE754Lib</a> is maintained by the <a href="https://github.com/Kerbaya">Kerbaya Foundation</a>.</span>
-        <span class="site-footer-credits">Copyright 2016 <a href="https://github.com/Kerbaya">The Kerbaya Foundation</a>.</span>
-      </footer>
+		<footer class="site-footer">
+			<span class="site-footer-owner">
+				<a href="https://github.com/Kerbaya/ieee754lib">IEEE754Lib</a> is maintained by <a href="https://github.com/Kerbaya">Kerbaya</a>.
+			</span>
+			<span class="site-footer-credits">Copyright 2016 <a href="http://www.kerbaya.com">Kerbaya Software</a>.</span>
+		</footer>
 
-    </section>
+	</section>
 
-  
-  </body>
+
+</body>
 </html>
