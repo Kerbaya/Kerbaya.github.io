@@ -48,60 +48,67 @@
 	<p>Encoding, decoding, and conversion of all basic interchange formats is supported:</p>
 
 	<table>
+		<colgroup>
+			<col align="left"/>
+			<col align="left"/>
+			<col align="right"/>
+			<col align="right"/>
+			<col align="right"/>
+		</colgroup>
 		<thead>
 			<tr>
-				<th align="left">Name</th>
-				<th align="left">Common name</th>
-				<th align="right">Exponent bits</th>
-				<th align="right">Significand bits</th>
-				<th align="right">Exponent bias</th>
+				<th>Name</th>
+				<th>Common name</th>
+				<th>Exponent bits</th>
+				<th>Significand bits</th>
+				<th>Exponent bias</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<td align="left">
+				<td>
 					<a href="https://en.wikipedia.org/wiki/Half-precision_floating-point_format">binary16</a>
 				</td>
-				<td align="left">Half</td>
-				<td align="right">5</td>
-				<td align="right">10</td>
-				<td align="right">15</td>
+				<td>Half</td>
+				<td>5</td>
+				<td>10</td>
+				<td>15</td>
 			</tr>
 			<tr>
-				<td align="left">
+				<td>
 					<a href="https://en.wikipedia.org/wiki/Single-precision_floating-point_format">binary32</a>
 				</td>
-				<td align="left">Single</td>
-				<td align="right">8</td>
-				<td align="right">23</td>
-				<td align="right">127</td>
+				<td>Single</td>
+				<td>8</td>
+				<td>23</td>
+				<td>127</td>
 			</tr>
 			<tr>
-				<td align="left">
+				<td>
 					<a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">binary64</a>
 				</td>
-				<td align="left">Double</td>
-				<td align="right">11</td>
-				<td align="right">52</td>
-				<td align="right">1023</td>
+				<td>Double</td>
+				<td>11</td>
+				<td>52</td>
+				<td>1,023</td>
 			</tr>
 			<tr>
-				<td align="left">
+				<td>
 					<a href="https://en.wikipedia.org/wiki/Quadruple-precision_floating-point_format">binary128</a>
 				</td>
-				<td align="left">Quadruple</td>
-				<td align="right">15</td>
-				<td align="right">112</td>
-				<td align="right">16383</td>
+				<td>Quadruple</td>
+				<td>15</td>
+				<td>112</td>
+				<td>16,383</td>
 			</tr>
 			<tr>
-				<td align="left">
+				<td>
 					<a href="https://en.wikipedia.org/wiki/Octuple-precision_floating-point_format">binary256</a>
 				</td>
-				<td align="left">Octuple</td>
-				<td align="right">19</td>
-				<td align="right">236</td>
-				<td align="right">262143</td>
+				<td>Octuple</td>
+				<td>19</td>
+				<td>236</td>
+				<td>262,143</td>
 			</tr>
 		</tbody>
 	</table>
@@ -139,9 +146,8 @@
 		<code>
 <![CDATA[byte[] quadBytes; // Input (16 bytes)
 IEEE754 number = IEEE754.decode(IEEE754Format.QUADRUPLE, 
-    	BitUtils.wrapSource(quadBytes));
-double converted = number.doubleValue();
-]]>
+		BitUtils.wrapSource(quadBytes));
+double converted = number.doubleValue();]]>
 		</code>
 	</pre>
 
@@ -156,8 +162,7 @@ double converted = number.doubleValue();
 		<code>
 <![CDATA[IEEE754 number; // Input
 OutputStream os; // Output
-number.toBits(IEEE754Format.DOUBLE, BitUtils.wrapSink(os));
-]]>
+number.toBits(IEEE754Format.DOUBLE, BitUtils.wrapSink(os));]]>
 		</code>
 	</pre>
 
@@ -176,8 +181,7 @@ IEEE754Format format = new IEEE754Format(
 		52,                      // Significand bit-count
 		BigInteger.valueOf(1023) // Exponent bias
 );
-IEEE754 number = IEEE754.decode(format, BitUtils.wrapSource(quadBytes));
-]]>
+IEEE754 number = IEEE754.decode(format, BitUtils.wrapSource(quadBytes));]]>
 		</code>
 	</pre>
 
