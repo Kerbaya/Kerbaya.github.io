@@ -142,12 +142,10 @@
 		Reading Quadruple-Precision (<a href="https://en.wikipedia.org/wiki/Quadruple-precision_floating-point_format">binary128</a>) from a Byte Array
 	</h4>
 
-	<pre>
-		<code>byte[] quadBytes; // Input (16 bytes)
+	<pre><code>byte[] quadBytes; // Input (16 bytes)
 IEEE754 number = IEEE754.decode(IEEE754Format.QUADRUPLE, 
 		BitUtils.wrapSource(quadBytes));
-double converted = number.doubleValue();</code>
-	</pre>
+double converted = number.doubleValue();</code></pre>
 
 	<h4>
 		<a id="writing-double-precision-binary64-to-an-outputstream" class="anchor" href="#writing-double-precision-binary64-to-an-outputstream" aria-hidden="true">
@@ -156,11 +154,9 @@ double converted = number.doubleValue();</code>
 		Writing Double-Precision (<a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">binary64</a>) to an OutputStream
 	</h4>
 
-	<pre>
-		<code>IEEE754 number; // Input
+	<pre><code>IEEE754 number; // Input
 OutputStream os; // Output
-number.toBits(IEEE754Format.DOUBLE, BitUtils.wrapSink(os));</code>
-	</pre>
+number.toBits(IEEE754Format.DOUBLE, BitUtils.wrapSink(os));</code></pre>
 
 	<h4>
 		<a id="reading-arbitrary-precision-from-a-byte-array" class="anchor" href="#reading-arbitrary-precision-from-a-byte-array" aria-hidden="true">
@@ -169,15 +165,13 @@ number.toBits(IEEE754Format.DOUBLE, BitUtils.wrapSink(os));</code>
 		Reading Arbitrary-Precision from a Byte Array
 	</h4>
 
-	<pre>
-		<code>byte[] quadBytes; // Input (16 bytes)
+	<pre><code>byte[] quadBytes; // Input (16 bytes)
 IEEE754Format format = new IEEE754Format(
 		11,                      // Exponent bit-count
 		52,                      // Significand bit-count
 		BigInteger.valueOf(1023) // Exponent bias
 );
-IEEE754 number = IEEE754.decode(format, BitUtils.wrapSource(quadBytes));</code>
-	</pre>
+IEEE754 number = IEEE754.decode(format, BitUtils.wrapSource(quadBytes));</code></pre>
 
 	<footer class="site-footer">
 		<span class="site-footer-owner">
